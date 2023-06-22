@@ -2,21 +2,6 @@ package com.ravim.esporteClube.utils;
 
 
 public class StringFirstLetterUppCase {
-
-	public String nounStandard(String word) {
-		String nomeUL=null;
-		String nomeCont[] = word.split("");
-		try {			
-			nomeUL=nomeCont[0].toUpperCase();		
-			for(int i = 1; i < nomeCont.length; i++) {			
-				nomeUL += nomeCont[i].substring(1).toLowerCase();
-			}
-		} catch (NumberFormatException e) {
-			System.out.println("Invalido");			
-		}				 
-		return nomeUL;
-	} 
-
 	public String firstLettersUppCase(String word) {
 		String palavras[] = word.split(" ");
 		String firstWord="", fistWordMod="", compWords="";
@@ -39,7 +24,5 @@ public class StringFirstLetterUppCase {
  
 		return word.toUpperCase();
 	}
-
-
 
 }
