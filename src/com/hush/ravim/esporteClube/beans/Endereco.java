@@ -4,7 +4,7 @@ public class Endereco {
 
 		private int id;
 	    private String logradouro;
-	    private byte numero;
+	    private int numero;
 	    private Cidade cidade;	    	    
 	    
 	    public Endereco() {
@@ -12,7 +12,7 @@ public class Endereco {
 			// TODO Auto-generated constructor stub
 		}
 
-		public Endereco(int id, String logradouro, byte numero) {
+		public Endereco(int id, String logradouro, int numero) {
 	        this.id = id;
 	    	this.logradouro = logradouro;
 	        this.numero = numero;	        
@@ -23,7 +23,7 @@ public class Endereco {
 	        return logradouro;
 	    }
 	    
-	    public byte getNumero() {
+	    public int getNumero() {
 	        return numero;
 	    }
 	    
@@ -36,7 +36,7 @@ public class Endereco {
 	        this.logradouro = logradouro;
 	    }
 	    
-	    public void setNumero(byte numero) {
+	    public void setNumero(int numero) {
 	        this.numero = numero;
 	    }
 	    

@@ -19,7 +19,7 @@ public class Main {
 				peso=null, salario=null, bonus=null;
 		double alturaNum=0, pesoNum=0, salarioNum=0, bonusNum=0;
 		char federado = 0;		
-		int numeroDeAtletasNum = 0;
+		int numeroDeAtletasNum = 0, counter=1;
 		byte idadeNum=0; 			
 		String regex = "-?\\d+(\\.\\d+)?";
 		Pattern pattern = Pattern.compile(regex);
@@ -122,23 +122,24 @@ public class Main {
 			atp1.setDataNascimento(LocalDate.parse(dataNascimento));		
 
 			String logradouro=null, cidade=null, cidadeMod=null, uf=null, ufModCid=null, estado=null, estadoMod=null, ufModEst=null, numero=null;
-			byte numeroNum=0;
+			int numeroNum=0;
 			System.out.println("Endereço: ");
 			logradouro = sc.nextLine();
-
+			String logradouroMod = strUtl.firstLettersUppCase(logradouro); 
+						
 			System.out.print("Número: ");
 			numero = sc.next();	
 			try {
-				numeroNum = Byte.parseByte(numero);
+				numeroNum = Integer.parseInt(numero);
 			} catch (InputMismatchException en) {
 
 			}
-			Endereco end1 = new Endereco(1, logradouro, numeroNum); 
+			Endereco end1 = new Endereco(counter, logradouroMod, numeroNum); 
 
 			System.out.println("Cidade");
 			sc.nextLine();
 			cidade = sc.nextLine(); 	
-			cidadeMod = strUtl.firstLettersUppCase(cidade);
+			cidadeMod = strUtl.firstLettersUppCase(cidade); 
 			System.out.println("UF");
 			uf = sc.next();
 			ufModCid = strUtl.toUpperCase(uf);
@@ -154,7 +155,7 @@ public class Main {
 			System.out.println("UF");
 			uf = sc.next();
 			ufModEst = strUtl.toUpperCase(uf);
-			Estado estado1 = new Estado(1, estadoMod, ufModEst);		
+			Estado estado1 = new Estado(counter, estadoMod, ufModEst);		
 			cidade1.setEstado(estado1); 
 
 			System.out.println("Escolha o esporte: [1=Basquete], [2=Volei]");
@@ -175,6 +176,7 @@ public class Main {
 				atp1.setPosicaoAtl(voleiPos.voleiPosicaoAtleta(posicaoV));
 			}			 
 			System.out.println(crud.AtletaProfCrud(atp1));
+			counter++;
 		}//for numeroDeAtletas
 		sc.close();
 	}
