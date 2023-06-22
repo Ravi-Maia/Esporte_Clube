@@ -1,6 +1,5 @@
 package com.hush.ravim.esporteClube.beans;
 
-import java.time.LocalDate;
 import com.hush.ravim.esporteClube.Interface.Pagavel;
 
 public class AtletaProfissional extends Atleta implements Pagavel {
@@ -11,17 +10,10 @@ public class AtletaProfissional extends Atleta implements Pagavel {
 	private Volei volei;
 	private double salario;
 	private double bonus;
-	
+
 	public AtletaProfissional() {
 		// TODO Auto-generated constructor stub
 	}
-	/*
-	public AtletaProfissional(String nome, byte idade, String cPF, Endereco endereco, LocalDate dataNascimento,
-			double altura, double peso,char federado, Basquete basquete) {
-		super(nome, idade, cPF, endereco, dataNascimento, altura, peso);
-		this.federado = federado;
-		this.setBasquete(basquete);
-	}*/
 
 	public AtletaProfissional(String nome, String sobreNome, byte idade, String cPF, double altura, double peso,char federado, double salario, double bonus) {
 		super(nome, sobreNome, idade, cPF, altura, peso);
@@ -82,21 +74,21 @@ public class AtletaProfissional extends Atleta implements Pagavel {
 	@Override
 	public String toString() {
 		return "AtletaProfissional [federado=" + federado + ", posicaoAtl=" + posicaoAtl + ", salario=" + salario + ", bonus=" + bonus + ", getNome()=" + getNome()
-				+ ", getSobreNome()=" + getSobreNome() + ", getIdade()=" + getIdade() + ", getCPF()=" + getCPF()
-				+ ", getEndereco()=" + getEndereco() + ", getDataNascimento()=" + getDataNascimento() + ", getAltura()="
-				+ getAltura() + ", getPeso()=" + getPeso() + "]";
+		+ ", getSobreNome()=" + getSobreNome() + ", getIdade()=" + getIdade() + ", getCPF()=" + getCPF()
+		+ ", getEndereco()=" + getEndereco() + ", getDataNascimento()=" + getDataNascimento() + ", getAltura()="
+		+ getAltura() + ", getPeso()=" + getPeso() + "]";
 	}
-	
-	
-
-	
 
 
 
-	
 
-	
 
-	
-	
+
+
+
+
+
+
+
+
 }

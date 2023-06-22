@@ -1,8 +1,6 @@
 package com.ravim.esporteClube.utils;
 
-public class NumberUtil {
-	
-	//int doom = 111111, doom2=10, count555=0;
+public class NumberCountDigits {
 	
 	public long numberOfDigits(long num) {
 		long digits=0, count=0;

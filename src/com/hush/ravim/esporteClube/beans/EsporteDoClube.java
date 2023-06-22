@@ -1,7 +1,7 @@
 package com.hush.ravim.esporteClube.beans;
 
 public class EsporteDoClube {
-	
+
 	private EsporteProfissional esporteProfissional;
 
 	public EsporteDoClube() {
@@ -21,6 +21,6 @@ public class EsporteDoClube {
 	public void setEsporteProfissional(EsporteProfissional esporteProfissional) {
 		this.esporteProfissional = esporteProfissional;
 	}
-	
-	
+
+
 }
