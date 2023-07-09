@@ -19,7 +19,7 @@ public class Main {
 				peso=null, salario=null, bonus=null;
 		double alturaNum=0, pesoNum=0, salarioNum=0, bonusNum=0;
 		char federado = 0;		
-		int numeroDeAtletasNum = 0, counter=1;
+		int numeroDeAtletasNum = 0;
 		byte idadeNum=0; 			
 		String regex = "-?\\d+(\\.\\d+)?";
 		Pattern pattern = Pattern.compile(regex);
@@ -49,15 +49,13 @@ public class Main {
 				System.out.println("Dado incorreto");
 				throw new Exception();
 			}							
-			String nomeUL =  strUtl.firstLettersUppCase(nome);	
-
+			String nomeUL = StringFirstLetterUppCase.firstLettersUppCase(nome);
 			System.out.println("Sobrenome do atleta");		
 			sobreNome = sc.next();
-			String sobreNomeUL =  strUtl.firstLettersUppCase(sobreNome);
-
+			String sobreNomeUL = StringFirstLetterUppCase.firstLettersUppCase(sobreNome);
 			System.out.println("Idade do atleta");
 			idade = sc.next(); 
-				
+				 
 			try {						
 				idadeNum = Byte.parseByte(idade);
 				while (idadeNum < 18) {
@@ -73,12 +71,12 @@ public class Main {
 			cpf = sc.next();		 
 			try {
 				long cpfNum = Long.parseLong(cpf);			
-				long cpfR = numUtl.numberOfDigits(cpfNum); 				
+				long cpfR = NumberCountDigits.numberOfDigits(cpfNum);
 				while(cpfR != 12) {
 					System.out.println("Digitos: " + cpfR + " - CPF: 12 digitos");
 					cpf = sc.next(); 
 					cpfNum = Long.parseLong(cpf);			
-					cpfR = numUtl.numberOfDigits(cpfNum);
+					cpfR = NumberCountDigits.numberOfDigits(cpfNum);
 				}
 			} catch (InputMismatchException e) {
 				
@@ -123,10 +121,9 @@ public class Main {
 
 			String logradouro=null, cidade=null, cidadeMod=null, uf=null, ufModCid=null, estado=null, estadoMod=null, ufModEst=null, numero=null;
 			int numeroNum=0;
-			System.out.println("Endereço: ");
+			System.out.println("Endereço");
 			logradouro = sc.nextLine();
-			String logradouroMod = strUtl.firstLettersUppCase(logradouro); 
-						
+			String logradouroMod = StringFirstLetterUppCase.firstLettersUppCase(logradouro);
 			System.out.print("Número: ");
 			numero = sc.next();	
 			try {
@@ -134,15 +131,15 @@ public class Main {
 			} catch (InputMismatchException en) {
 
 			}
-			Endereco end1 = new Endereco(counter, logradouroMod, numeroNum); 
+			Endereco end1 = new Endereco(1, logradouroMod, numeroNum); 
 
 			System.out.println("Cidade");
 			sc.nextLine();
-			cidade = sc.nextLine(); 	
-			cidadeMod = strUtl.firstLettersUppCase(cidade); 
+			cidade = sc.nextLine(); 				
+			cidadeMod = StringFirstLetterUppCase.firstLettersUppCase(cidade);
 			System.out.println("UF");
 			uf = sc.next();
-			ufModCid = strUtl.toUpperCase(uf);
+			ufModCid = StringFirstLetterUppCase.toUpperCase(uf);
 			Cidade cidade1 = new Cidade(1, cidadeMod, ufModCid);
 
 			atp1.setEndereco(end1);
@@ -150,12 +147,12 @@ public class Main {
 
 			System.out.println("Estado");
 			sc.nextLine();
-			estado = sc.nextLine();	
-			estadoMod = strUtl.firstLettersUppCase(estado);
+			estado = sc.nextLine();
+			estadoMod = StringFirstLetterUppCase.firstLettersUppCase(estado);
 			System.out.println("UF");
 			uf = sc.next();
-			ufModEst = strUtl.toUpperCase(uf);
-			Estado estado1 = new Estado(counter, estadoMod, ufModEst);		
+			ufModEst = StringFirstLetterUppCase.toUpperCase(uf);
+			Estado estado1 = new Estado(1, estadoMod, ufModEst);	 	
 			cidade1.setEstado(estado1); 
 
 			System.out.println("Escolha o esporte: [1=Basquete], [2=Volei]");
@@ -176,7 +173,6 @@ public class Main {
 				atp1.setPosicaoAtl(voleiPos.voleiPosicaoAtleta(posicaoV));
 			}			 
 			System.out.println(crud.AtletaProfCrud(atp1));
-			counter++;
 		}//for numeroDeAtletas
 		sc.close();
 	}

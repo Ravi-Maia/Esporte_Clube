@@ -2,7 +2,9 @@ package com.ravim.esporteClube.utils;
 
 
 public class StringFirstLetterUppCase {
-	public String firstLettersUppCase(String word) {
+	
+	
+	public static String firstLettersUppCase(String word) {
 		String palavras[] = word.split(" ");
 		String firstWord="", fistWordMod="", compWords="";
 		char firstLetterMod, firstLetter; 
@@ -20,9 +22,9 @@ public class StringFirstLetterUppCase {
 		return compWords.trim();
 	}
 
-	public String toUpperCase(String word) {
+	public static String toUpperCase(String word) {
  
 		return word.toUpperCase();
 	}
-
+ 
 }
