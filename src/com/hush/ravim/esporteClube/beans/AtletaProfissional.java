@@ -4,7 +4,7 @@ import com.hush.ravim.esporteClube.Interface.Pagavel;
 
 public class AtletaProfissional extends Atleta implements Pagavel {
 
-	private char federado;
+	private String federado;
 	private String posicaoAtl;
 	private Basquete basquete;
 	private Volei volei;
@@ -15,7 +15,7 @@ public class AtletaProfissional extends Atleta implements Pagavel {
 		// TODO Auto-generated constructor stub
 	}
 
-	public AtletaProfissional(String nome, String sobreNome, byte idade, String cPF, double altura, double peso,char federado, double salario, double bonus) {
+	public AtletaProfissional(String nome, String sobreNome, byte idade, String cPF, double altura, double peso,String federado, double salario, double bonus) {
 		super(nome, sobreNome, idade, cPF, altura, peso);
 		this.federado = federado;
 		this.salario = salario;
@@ -24,7 +24,7 @@ public class AtletaProfissional extends Atleta implements Pagavel {
 	}
 
 	//GETTRS
-	public char getFederado() {
+	public String getFederado() {
 		return federado;
 	}
 	public String getPosicaoAtl() {
@@ -43,7 +43,7 @@ public class AtletaProfissional extends Atleta implements Pagavel {
 		return bonus;
 	}
 	//SETTRS
-	public void setFederado(char federado) {
+	public void setFederado(String federado) {
 		this.federado = federado;
 	}		
 	public void setBasquete(Basquete basquete) {

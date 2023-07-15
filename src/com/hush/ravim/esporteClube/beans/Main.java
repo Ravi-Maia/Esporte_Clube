@@ -18,12 +18,10 @@ public class Main {
 		String nome = null, cpf=null, sobreNome=null, dataNascimento=null, numeroDeAtletas=null,idade=null, altura=null, 
 				peso=null, salario=null, bonus=null;
 		double alturaNum=0, pesoNum=0, salarioNum=0, bonusNum=0;
-		char federado = 0;		
+		String federado = null;		
 		int numeroDeAtletasNum = 0;
 		byte idadeNum=0; 			
-		
-		StringFirstLetterUppCase strUtl = new StringFirstLetterUppCase();	
-		NumberCountDigits numUtl = new NumberCountDigits();
+
 		Crud crud = new Crud();
 
 		System.out.println("Quantos atletas você gostaria de adicionar no sistema?");
@@ -39,7 +37,7 @@ public class Main {
 			} catch (Exception nfe) {
 				throw new Excecoes("Falha: ", nfe);
 			} 		
- 
+
 			System.out.println("Nome do atleta"); 
 			nome = sc.next();
 			sc.nextLine();										
@@ -49,7 +47,7 @@ public class Main {
 			String sobreNomeUL = StringFirstLetterUppCase.firstLettersUppCase(sobreNome);
 			System.out.println("Idade do atleta");
 			idade = sc.next(); 
-				 
+
 			try {						
 				idadeNum = Byte.parseByte(idade);
 				while (idadeNum < 18) {
@@ -73,7 +71,7 @@ public class Main {
 					cpfR = NumberCountDigits.numberOfDigits(cpfNum);
 				}
 			} catch (InputMismatchException e) {
-				
+
 			}			
 
 			System.out.println("Altura do atleta");
@@ -92,11 +90,11 @@ public class Main {
 				throw new Excecoes("Falha: ", e);
 			}				
 			System.out.println("Atleta é federado? [S][N]");
-			federado = sc.next().charAt(0);
-			while(federado != 'S' && federado != 'N') {
+			federado = sc.next();
+			while(!federado.equalsIgnoreCase("S") && !federado.equalsIgnoreCase("N")) {
 				System.out.println("Escolha [S] ou [N]");
-				federado = sc.next().charAt(0);
-			}
+				federado = sc.next();
+			} 
 
 			System.out.println("Salario do atleta");
 			salario = sc.next();
