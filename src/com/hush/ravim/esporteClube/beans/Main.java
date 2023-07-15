@@ -22,6 +22,8 @@ public class Main {
 		int numeroDeAtletasNum = 0;
 		byte idadeNum=0; 			
 		
+		StringFirstLetterUppCase strUtl = new StringFirstLetterUppCase();	
+		NumberCountDigits numUtl = new NumberCountDigits();
 		Crud crud = new Crud();
 
 		System.out.println("Quantos atletas você gostaria de adicionar no sistema?");
