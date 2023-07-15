@@ -21,15 +21,11 @@ public class Main {
 		char federado = 0;		
 		int numeroDeAtletasNum = 0;
 		byte idadeNum=0; 			
-		String regex = "-?\\d+(\\.\\d+)?";
-		Pattern pattern = Pattern.compile(regex);
-		StringFirstLetterUppCase strUtl = new StringFirstLetterUppCase();	
-		NumberCountDigits numUtl = new NumberCountDigits();
+		
 		Crud crud = new Crud();
 
 		System.out.println("Quantos atletas você gostaria de adicionar no sistema?");
-		numeroDeAtletas = sc.next();
-
+		numeroDeAtletas = sc.next();		
 		for(int i =0; i < Integer.parseInt(numeroDeAtletas); i++) {
 			try {									
 				numeroDeAtletasNum = Integer.parseInt(numeroDeAtletas);
@@ -43,15 +39,11 @@ public class Main {
 			} 		
  
 			System.out.println("Nome do atleta"); 
-			nome = sc.next();		
-			Matcher matcher = pattern.matcher(nome);
-			if(matcher.find()) {
-				System.out.println("Dado incorreto");
-				throw new Exception();
-			}							
+			nome = sc.next();
+			sc.nextLine();										
 			String nomeUL = StringFirstLetterUppCase.firstLettersUppCase(nome);
 			System.out.println("Sobrenome do atleta");		
-			sobreNome = sc.next();
+			sobreNome = sc.nextLine(); 
 			String sobreNomeUL = StringFirstLetterUppCase.firstLettersUppCase(sobreNome);
 			System.out.println("Idade do atleta");
 			idade = sc.next(); 
@@ -151,7 +143,7 @@ public class Main {
 			estadoMod = StringFirstLetterUppCase.firstLettersUppCase(estado);
 			System.out.println("UF");
 			uf = sc.next();
-			ufModEst = StringFirstLetterUppCase.toUpperCase(uf);
+			ufModEst = StringFirstLetterUppCase.toUpperCase(uf); 
 			Estado estado1 = new Estado(1, estadoMod, ufModEst);	 	
 			cidade1.setEstado(estado1); 
 
